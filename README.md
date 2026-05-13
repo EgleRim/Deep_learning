@@ -155,7 +155,7 @@ An additional utility cell runs the model and reports the predicted class and fu
 
 ### Full Training Run (Colab)
 1. Mount Drive and unzip dataset
-2. Run cells in order: **1B → Colab setup → 4 → 5 → 6 → 7 → 8 → 9 → 10**
+2. Run cells in order: **Colab setup → 4 → 5 → 6 → 7 → 8 → 9 → 10**
 
 ### Full Training Run (Local)
 Run cells in order: **1 → 1B → 2 → 3 → 4 → 5 → 6 → 7 → 8 → 9 → 10**
