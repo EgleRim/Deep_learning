@@ -151,22 +151,6 @@ An additional utility cell runs the model and reports the predicted class and fu
 
 ---
 
-## Quick Start
-
-### Full Training Run (Colab)
-1. Mount Drive and unzip dataset
-2. Run cells in order: **Colab setup → 4 → 5 → 6 → 7 → 8 → 9 → 10**
-
-### Full Training Run (Local)
-Run cells in order: **1 → 1B → 2 → 3 → 4 → 5 → 6 → 7 → 8 → 9 → 10**
-
-### Inference on Saved Checkpoint (No Re-Training)
-1. Run the **`UNet` model definition cell** (Cell 7) to define the architecture
-2. Run the **"After closing" loader cell** (Cell 11) to restore weights and metadata
-3. Run the **external image inference cell** (Cell 15) with your photo path
-
----
-
 ## Requirements
 
 ```
@@ -202,7 +186,5 @@ pip install torch torchvision fiftyone Pillow numpy matplotlib torchsummary
 
 - In Colab, checkpoints are saved to `Google Drive/MyDrive/segmentation_checkpoints/` and persist across runtime disconnects
 - Locally, images are downloaded to the FiftyOne default directory (configurable in Cell 1)
-- The `WeightedRandomSampler` oversamples Bird-containing images most aggressively (weight 4.0–8.0), reflecting Bird's status as the rarest foreground class by pixel count (~3.4% of training pixels)
-- Noise/background images (all-zero masks) are assigned a low sampler weight (0.2) to prevent the model from over-predicting background
 - The model input is always resized to **256×256** — predictions are upsampled back to original resolution for overlay visualisation
 - Training supports **resumption**: re-running Cell 9 will pick up from the last saved epoch if `latest_checkpoint.pt` exists
